@@ -1,0 +1,7 @@
+# Project exclude paths
+/build/
+/node_modules/
+/config/dev/
+
+.env
+.idea

@@ -1,0 +1,27 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+  <% htmlWebpackPlugin.options.addon.scopes.forEach((scope, index) => { %>
+    <% if (index !== htmlWebpackPlugin.options.addon.scopes.length - 1) { %>
+      "<%=scope%>",
+    <% } else { %>
+      "<%=scope%>"
+    <% } %>
+  <% }) %>
+  ],
+  "gmail": {
+    "name": "<%= htmlWebpackPlugin.options.addon.name %>",
+    "logoUrl": "https://i.imgur.com/Em0d7Tc.png",
+    "contextualTriggers": [{
+      "unconditional": {
+      },
+      "onTriggerFunction": "handleEntryPoint"
+    }],
+    "primaryColor": "#4285F4",
+    "secondaryColor": "#4285F4"
+  }
+}
