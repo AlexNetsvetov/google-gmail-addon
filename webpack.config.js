@@ -26,11 +26,12 @@ module.exports = {
       template: join(__dirname, 'config', 'appsscript.json.ejs'),
       chunks: [],
       addon: {
-        name: 'My Gmail add-on',
+        name: 'OroConnector',
         scopes: [
           'https://www.googleapis.com/auth/gmail.addons.execute',
           'https://www.googleapis.com/auth/gmail.readonly',
           'https://www.googleapis.com/auth/script.external_request',
+          'https://www.googleapis.com/auth/spreadsheets.currentonly',
         ],
       },
     }),
@@ -40,6 +41,9 @@ module.exports = {
           from: join(__dirname, `config/${mode}/.clasp.json`),
           to: '.',
         },
+        // {
+        //   from: join(__dirname, 'src/**/*.html'),
+        // },
       ],
     }),
   ],

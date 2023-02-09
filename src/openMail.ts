@@ -1,5 +1,4 @@
-import { getJoke, Joke } from './api';
-
+/*
 // TODO: find type
 export function handleButtonClick(e: any) {
   const { sender } = e.parameters;
@@ -91,3 +90,4 @@ export function onGmailMessageOpen(e: any) {
 
   return [card.build()];
 }
+*/

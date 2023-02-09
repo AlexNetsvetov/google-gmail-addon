@@ -1,6 +1,11 @@
 {
   "timeZone": "America/New_York",
   "dependencies": {
+    "libraries": [{
+      "userSymbol": "OAuth2",
+      "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+      "version": "43"
+    }]
   },
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
@@ -13,14 +18,24 @@
     <% } %>
   <% }) %>
   ],
-  "gmail": {
-    "name": "<%= htmlWebpackPlugin.options.addon.name %>",
-    "logoUrl": "https://i.imgur.com/Em0d7Tc.png",
-    "contextualTriggers": [{
-      "unconditional": {},
-      "onTriggerFunction": "onGmailMessageOpen"
-    }],
-    "primaryColor": "#4285F4",
-    "secondaryColor": "#4285F4"
+  "addOns": {
+    "common": {
+      "name": "<%= htmlWebpackPlugin.options.addon.name %>",
+      "logoUrl": "https://pbs.twimg.com/profile_images/1238438046514712577/qD0LQp89_x96.jpg",
+      "layoutProperties": {
+        "primaryColor": "#ffffff",
+        "secondaryColor": "#767676"
+      }
+    },
+    "gmail": {
+      "homepageTrigger": {
+        "runFunction": "onHomePageOpen",
+        "enabled": true
+      },
+      "contextualTriggers": [{
+        "unconditional": {},
+        "onTriggerFunction": "onGmailMessageOpen"
+      }]
+    }
   }
 }
